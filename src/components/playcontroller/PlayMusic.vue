@@ -107,7 +107,7 @@ export default {
     height: 100vh;
     background-size: auto 100%;
     background-position: center;
-    filter: blur(50px);
+    filter: blur(70px);
   }
   .music-nav {
     display: flex;

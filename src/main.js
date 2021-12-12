@@ -1,9 +1,17 @@
 import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
 import store from './store'
 // Vant
-import Vant from 'vant';
+// login
 import 'vant/lib/index.css';
+import { Form } from 'vant';
+import { Field } from 'vant';
+import { Button } from 'vant';
+//tab
+import { Tab, Tabs } from 'vant';
 
-createApp(App).use(Vant).use(store).use(router).mount('#app')
+
+
+import App from './App.vue'
+import router from './router'
+
+createApp(App).use(Tabs).use(Tab).use(Button).use(Field).use(Form).use(store).use(router).mount('#app')

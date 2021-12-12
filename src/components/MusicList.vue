@@ -82,16 +82,11 @@ export default {
     onMounted(async () => {
       let result = await getMusicList()
       state.musicList = result.data.result
-      console.log(state.musicList)
     })
     onUpdated(() => {
       var swiper = new Swiper('#music-swiper', {
         slidesPerView: 3,
-        spaceBetween: 10,
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true
-        }
+        spaceBetween: 10
       })
     })
     return {

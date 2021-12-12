@@ -1,11 +1,10 @@
 import axios from 'axios'
 
-// let baseUrl = 'http://localhost:3000';
-let baseUrl = 'http://music.cpengx.cn';
+let baseUrl = 'http://localhost:3000';
 
 //获取banner轮播图 根据api文档：type:资源类型,对应以下类型,默认为 0 即 PC
 //0: pc；1: android；2: iphone；3: ipad
-export function getBanner(type = 1) {
+export function getBanner(type = 0) {
   return axios.get(`${baseUrl}/banner?type=${type}`)
 }
 

@@ -19,7 +19,7 @@ export default createStore({
         id: 27581,
         name: "电台情歌",
         pic: 19045740416582430,
-        picUrl: "http://p4.music.126.net/ImOQNmJZTzogPdt0-AsyDA==/19045740416582430.jpg?param=34y34",
+        picUrl: "http://p1.music.126.net/ZDtkKPIWsQlRLeRHDL2xcw==/109951166491945754.jpg?param=177y177",
       }
     }],
     plyaControllerIndex: 0,

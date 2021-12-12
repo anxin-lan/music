@@ -2,7 +2,7 @@
   <div class="swiper">
     <div class="swiper-container" id="swiperindex">
       <div class="swiper-wrapper">
-        <div class="swiper-slide" v-for="item in images" :key="item.id"><img :src="item.pic"></div>
+        <div class="swiper-slide" v-for="(item,index) in images" :key="index"><img :src="item.pic"></div>
       </div>
       <!-- 分页器 -->
       <div class="swiper-pagination"></div>
@@ -12,8 +12,8 @@
 
 <script>
 //swiper
-import Swiper from 'swiper'
 import 'swiper/css/swiper.css'
+import Swiper from 'swiper'
 import { getBanner } from '@/api/index.js'
 
 export default {
@@ -39,23 +39,26 @@ export default {
     }
   },
   async mounted() {
-    var mySwiper = new Swiper('#swiperindex', {
-      loop: true, // 循环模式选项
-
-      // 如果需要分页器
-      pagination: {
-        el: '.swiper-pagination'
-      }
-    })
-    //请求banner数据
-    // let res = await axios.get('http://localhost:3000/banner?type=1')
     let res = await getBanner(1)
     this.images = res.data.banners
+    setTimeout(() => {
+      var mySwiper = new Swiper('#swiperindex', {
+        loop: true, // 循环模式选项
+
+        // 如果需要分页器
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        }
+      })
+    }, 10)
+    //请求banner数据
+    // let res = await axios.get('http://localhost:3000/banner?type=1')
   }
 }
 </script>
 
-<style lang="less">
+<style lang="less" >
 #swiperindex {
   .swiper {
     position: relative;
